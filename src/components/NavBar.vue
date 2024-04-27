@@ -1,46 +1,46 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue';
+// import { onMounted, onUnmounted, ref } from 'vue';
 
-const links = ref([
-  {path: '/', name: 'HomePage'},
-  {path: '/about', name: 'Acerca'},
-  {path: '/reception', name: 'Recepción'},
-]);
+// const links = ref([
+//   {path: '/', name: 'HomePage'},
+//   {path: '/about', name: 'Acerca'},
+//   {path: '/reception', name: 'Recepción'},
+// ]);
 
-const isMobile = ref(window.innerWidth <= 768);
+// const isMobile = ref(window.innerWidth <= 768);
 
-const updateIsMobile = () => isMobile.value = window.innerWidth <= 768;
+// const updateIsMobile = () => isMobile.value = window.innerWidth <= 768;
 
-onMounted(() => {
-  window.addEventListener('resize', updateIsMobile);
-  //window.addEventListener('tokenChanged', updateIsAuthenticated);
-  //updateIsAuthenticated()
-});
+// onMounted(() => {
+//   window.addEventListener('resize', updateIsMobile);
+//   //window.addEventListener('tokenChanged', updateIsAuthenticated);
+//   //updateIsAuthenticated()
+// });
 
-onUnmounted(() => {
-  window.removeEventListener('resize', updateIsMobile);
-  //window.removeEventListener('tokenChanged', updateIsAuthenticated);
-});
+// onUnmounted(() => {
+//   window.removeEventListener('resize', updateIsMobile);
+//   //window.removeEventListener('tokenChanged', updateIsAuthenticated);
+// });
 </script>
 
 <template>
-    <div class="malo">
+    <div class="malo">            
         <nav>
             <router-link to="/">
                 <div class="home">
-                    <h1>Inicio</h1>
+                    <span><h1>Inicio</h1></span>
                 </div>
             </router-link>    
 
             <router-link to="/about">                
                 <div class="about">
-                    <h1>Acerca</h1>
+                    <span><h1>Acerca</h1></span>
                 </div>
             </router-link>                    
 
-            <router-link to="/reception">                
+            <router-link to="/login">                
                 <div class="recept">
-                    <h1>Recepción</h1>
+                    <span><h1>Login</h1></span>
                 </div>
             </router-link>
         </nav>
@@ -49,7 +49,7 @@ onUnmounted(() => {
 
 <style>
     nav {                
-        width: 99.3%;
+        width: 99.7%;
         position: absolute;
         left: 0;
         top: 0;
@@ -58,24 +58,23 @@ onUnmounted(() => {
         display: flex;
         align-items: right;
         justify-content: flex-end;
-        border: 5px solid #000;
+        border: 2px solid #000;
     }
     .home {
-        top: 90; 
-        background-color: green;
+        background-color: rgb(206, 192, 0);
         padding: 1vh 2vh 1vh 2vh;
         color: #000;
-        border-left: 5px solid #000;
-        border-right: 5px solid #000;
+        border-left: 2px solid #000;
+        border-right: 2px solid #000;
     }
     .about {
-        background-color: white;
+        background-color: rgb(255, 255, 255);
         padding: 1vh 2vh 1vh 2vh;
         color: #000;
-        border-right: 5px solid #000;
+        border-right: 2px solid #000;
     }
     .recept {
-        background-color: red;
+        background-color: rgb(206, 192, 0);
         padding: 1vh 2vh 1vh 2vh;
         color: #000;        
     }

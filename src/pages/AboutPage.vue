@@ -1,3 +1,7 @@
 <template>
-    <h1>Esta es la pagina de informacion</h1>
+    <h1>Esta es la página de información</h1>
 </template>
+
+<style scoped>
+
+</style>

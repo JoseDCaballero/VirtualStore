@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DefaultLayout from './layouts/DefaultLayout.vue';
-import { AboutPage, HomePage, ReceptionPage } from './pages/index.js'
+import { AboutPage, HomePage, ReceptionPage, LoginPage, CategoriesPage } from './pages/index.js'
 
 const routes = [
   {
@@ -24,6 +24,22 @@ const routes = [
     component: ReceptionPage,
     meta: {
       title: 'Recepcion',
+      layout: DefaultLayout
+    }
+  },
+  {
+    path: '/login',
+    component: LoginPage,
+    meta: {
+      title: 'Iniciar sesión',
+      layout: DefaultLayout
+    }
+  },
+  {
+    path: '/categories',
+    component: CategoriesPage,
+    meta: {
+      title: 'Categorías',
       layout: DefaultLayout
     }
   },
