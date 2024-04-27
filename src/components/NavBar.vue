@@ -27,19 +27,19 @@ onUnmounted(() => {
     <div class="malo">
         <nav>
             <router-link to="/">
-                <div class="home" placeholder="HomePage">
-                    <h1>HomePage</h1>
+                <div class="home">
+                    <h1>Inicio</h1>
                 </div>
             </router-link>    
 
             <router-link to="/about">                
-                <div class="about" placeholder="HomePage">
-                    <h1>Sobre nosotros</h1>
+                <div class="about">
+                    <h1>Acerca</h1>
                 </div>
             </router-link>                    
 
             <router-link to="/reception">                
-                <div class="recept" placeholder="HomePage">
+                <div class="recept">
                     <h1>Recepción</h1>
                 </div>
             </router-link>
