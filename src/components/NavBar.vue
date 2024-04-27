@@ -80,6 +80,6 @@ onUnmounted(() => {
         color: #000;        
     }
     .malo {
-        height: 6vh;
+        height: 10vh;
     }
 </style>

@@ -1,5 +1,5 @@
 <template>
     <main>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa modi inventore eos cum amet laudantium saepe sit a ipsum sapiente! Nulla incidunt et delectus ullam fugiat nobis magni, dolorum beatae!</p>
+        <h1>Aquí puedes preguntar de todo</h1>
     </main>
 </template>
