@@ -1,15 +1,85 @@
+<script setup>
+import { onMounted, onUnmounted, ref } from 'vue';
+
+const links = ref([
+  {path: '/', name: 'HomePage'},
+  {path: '/about', name: 'Acerca'},
+  {path: '/reception', name: 'Recepción'},
+]);
+
+const isMobile = ref(window.innerWidth <= 768);
+
+const updateIsMobile = () => isMobile.value = window.innerWidth <= 768;
+
+onMounted(() => {
+  window.addEventListener('resize', updateIsMobile);
+  //window.addEventListener('tokenChanged', updateIsAuthenticated);
+  //updateIsAuthenticated()
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateIsMobile);
+  //window.removeEventListener('tokenChanged', updateIsAuthenticated);
+});
+</script>
+
 <template>
-    <header>
+    <div class="malo">
         <nav>
-            <router-link to="/"><button>HomePage</button></router-link>    
-            <router-link to="/about"><button>AboutPage</button></router-link>                    
-            <router-link to="/reception"><button>ReceptionPage</button></router-link>
+            <router-link to="/">
+                <div class="home" placeholder="HomePage">
+                    <h1>HomePage</h1>
+                </div>
+            </router-link>    
+
+            <router-link to="/about">                
+                <div class="about" placeholder="HomePage">
+                    <h1>Sobre nosotros</h1>
+                </div>
+            </router-link>                    
+
+            <router-link to="/reception">                
+                <div class="recept" placeholder="HomePage">
+                    <h1>Recepción</h1>
+                </div>
+            </router-link>
         </nav>
-    </header>
+    </div>    
 </template>
 
 <style>
-    nav {
-        background-color: #000;
+    nav {                
+        width: 99.3%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: #0081CF;        
+        text-align: right;
+        display: flex;
+        align-items: right;
+        justify-content: flex-end;
+        border: 5px solid #000;
+    }
+    .home {
+        top: 90; 
+        background-color: green;
+        padding: 1vh 2vh 1vh 2vh;
+        color: #000;
+        border-left: 5px solid #000;
+        border-right: 5px solid #000;
+    }
+    .about {
+        background-color: white;
+        padding: 1vh 2vh 1vh 2vh;
+        color: #000;
+        border-right: 5px solid #000;
+    }
+    .recept {
+        background-color: red;
+        padding: 1vh 2vh 1vh 2vh;
+        color: #000;        
+    }
+    .malo {
+        height: 6vh;
     }
 </style>

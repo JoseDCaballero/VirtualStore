@@ -1,4 +1,4 @@
-<template>
+<template>    
     <h1>Hola hola</h1>
-    <p>Este es el home</p>        
+    <p>Este es el home</p>            
 </template>
