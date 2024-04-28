@@ -21,12 +21,36 @@
 //   window.removeEventListener('resize', updateIsMobile);
 //   //window.removeEventListener('tokenChanged', updateIsAuthenticated);
 // });
+
+function closeMenu() {
+    document.getElementById("menu-toggle").checked = false;
+}
 </script>
 
 <template>
     <div class="malo">            
         <nav>
-            <router-link to="/">
+            <main>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger-menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div id="menu" class="menu">                    
+                    <label for="menu-toggle" class="close-button">&#10006;</label>
+                        <router-link to="/" @click="closeMenu()">
+                            <span>Inicio</span>
+                        </router-link>
+                        <router-link to="/about" @click="closeMenu()">
+                            <span>Acerca</span>
+                        </router-link>
+                        <router-link to="/login" @click="closeMenu()">
+                            <span>Login</span>
+                        </router-link>
+                </div>
+            </label>
+        </main>
+            <!--<router-link to="/">
                 <div class="home">
                     <span><h1>Inicio</h1></span>
                 </div>
@@ -42,7 +66,7 @@
                 <div class="recept">
                     <span><h1>Login</h1></span>
                 </div>
-            </router-link>
+            </router-link>-->
         </nav>
     </div>    
 </template>
@@ -59,6 +83,7 @@
         align-items: right;
         justify-content: flex-end;
         border: 2px solid #000;
+        padding: 4vh 5vh 5vh 5vh;
     }
     .home {
         background-color: rgb(206, 192, 0);
@@ -81,4 +106,73 @@
     .malo {
         height: 10vh;
     }
+
+    #arribita{
+        background-color: #0081CF;
+        padding: 2vh 3vh 2vh 3vh; 
+    }
+
+    main {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#menu-toggle, #menu-toggle:checked {
+    display: none;
+}
+
+.hamburger-menu {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;    
+}
+
+.line {
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    border-radius: 20px;
+    margin: 6px 0;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    padding-top: 50px; /* Espacio para evitar que el menú tape el ícono */
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+}
+
+#menu-toggle:checked + .hamburger-menu .menu {
+    transform: translateX(0);
+}
+
+.menu a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #f1f1f1;    
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
 </style>

@@ -55,7 +55,11 @@ const router = useRouter()
                 <input type="password" id="password" name="password" required>
             </div>
             <button type="submit">Iniciar Sesión</button>
-        </form>
+        </form><br>        
+        <label>¿No tienes una cuenta?</label>
+        <router-link to="/register">
+            <button>Crear cuenta</button>
+        </router-link>
     </div>    
 </main>    
 </template>

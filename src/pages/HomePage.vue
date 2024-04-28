@@ -10,9 +10,9 @@
         <router-link to="/login"><h2>Para poder hacer compras debe iniciar sesión en su cuenta</h2></router-link>
     </div>
 
-    <div id="fondo">
+    <!--<div id="fondo">
         <img src="/src/images/logo.png">
-    </div>
+    </div>-->
 </template>
 
 <style scoped>

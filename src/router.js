@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DefaultLayout from './layouts/DefaultLayout.vue';
-import { AboutPage, HomePage, ReceptionPage, LoginPage, CategoriesPage } from './pages/index.js'
+import { AboutPage, HomePage, ReceptionPage, LoginPage, CategoriesPage, NewAccount } from './pages/index.js'
 
 const routes = [
   {
@@ -40,6 +40,14 @@ const routes = [
     component: CategoriesPage,
     meta: {
       title: 'Categorías',
+      layout: DefaultLayout
+    }
+  },
+  {
+    path: '/register',
+    component: NewAccount,
+    meta: {
+      title: 'Crear cuentas',
       layout: DefaultLayout
     }
   },
