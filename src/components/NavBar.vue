@@ -69,7 +69,10 @@ function closeMenu() {
                 <div class="recept">
                     <span><h1>Login</h1></span>
                 </div>
-            </router-link>-->            
+            </router-link>-->     
+            <div id="fondo">
+                <img src="/src/images/logo.png">
+            </div>   
         </nav>
     </div>    
 </template>
@@ -182,5 +185,17 @@ function closeMenu() {
     left: 80px;
     cursor: pointer;
     font-size: 40px;    
+}
+
+#fondo {
+    padding-top: 2vh;
+    padding-right: 2vh;
+    height: 70px;
+    width: 190px;
+}
+
+img {
+    height: 100%;
+    width:100%;
 }
 </style>
