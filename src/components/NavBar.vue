@@ -38,6 +38,8 @@ function closeMenu() {
                 <div class="line"></div>
                 <div id="menu" class="menu">                    
                     <label for="menu-toggle" class="close-button">&#10006;</label>
+                    <div style="height: 50px;"></div>
+                    <div style="background-color: #fff; border-top: 2px solid #000; height: 100vh;">
                         <router-link to="/" @click="closeMenu()">
                             <span>Inicio</span>
                         </router-link>
@@ -47,6 +49,7 @@ function closeMenu() {
                         <router-link to="/login" @click="closeMenu()">
                             <span>Login</span>
                         </router-link>
+                    </div>    
                 </div>
             </label>
         </main>
@@ -66,7 +69,7 @@ function closeMenu() {
                 <div class="recept">
                     <span><h1>Login</h1></span>
                 </div>
-            </router-link>-->
+            </router-link>-->            
         </nav>
     </div>    
 </template>
@@ -83,7 +86,8 @@ function closeMenu() {
         align-items: right;
         justify-content: flex-end;
         border: 2px solid #000;
-        padding: 4vh 5vh 5vh 5vh;
+        /*padding: 4vh 5vh 5vh 5vh;*/
+        height: 100px;
     }
     .home {
         background-color: rgb(206, 192, 0);
@@ -104,7 +108,7 @@ function closeMenu() {
         color: #000;        
     }
     .malo {
-        height: 10vh;
+        height: 12vh;
     }
 
     #arribita{
@@ -113,10 +117,10 @@ function closeMenu() {
     }
 
     main {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
 
 #menu-toggle, #menu-toggle:checked {
     display: none;
@@ -125,16 +129,16 @@ function closeMenu() {
 .hamburger-menu {
     position: absolute;
     left: 10px;
-    top: 10px;
-    width: 30px;
+    top: 25px;
+    width: 40px;
     height: 30px;
     cursor: pointer;    
 }
 
 .line {
     width: 100%;
-    height: 4px;
-    background-color: #333;
+    height: 8px;
+    background-color: #000;
     border-radius: 20px;
     margin: 6px 0;
 }
@@ -143,13 +147,15 @@ function closeMenu() {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #fff;
+    background-color: #0081CF;
     width: 200px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     height: 100vh;
     padding-top: 50px; /* Espacio para evitar que el menú tape el ícono */
     transition: transform 0.3s ease;
     transform: translateX(-100%);
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
 }
 
 #menu-toggle:checked + .hamburger-menu .menu {
@@ -158,21 +164,23 @@ function closeMenu() {
 
 .menu a {
     display: block;
-    color: #333;
+    color: #000;
     text-decoration: none;
     padding: 10px 20px;
     transition: background-color 0.3s ease;
+    font-size: 3vh;
+    text-align: center
 }
 
 .menu a:hover {
-    background-color: #f1f1f1;    
+    background-color: grey;    
 }
 
 .close-button {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    left: 80px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 40px;    
 }
 </style>

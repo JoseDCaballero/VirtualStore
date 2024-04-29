@@ -21,6 +21,7 @@
     }
     a{
         color: #000;
+        text-decoration: none;
     }
     img {
         width: 70%;
