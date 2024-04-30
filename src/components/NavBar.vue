@@ -124,7 +124,6 @@ function closeMenu() {
     main {
         margin: 0;
         padding: 0;
-        font-family: Arial, sans-serif;
     }
 
 #menu-toggle, #menu-toggle:checked {
@@ -174,7 +173,10 @@ function closeMenu() {
     padding: 10px 20px;
     transition: background-color 0.3s ease;
     font-size: 3vh;
-    text-align: center
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
 }
 
 .menu a:hover {

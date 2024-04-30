@@ -73,6 +73,9 @@ const router = useRouter()
     align-items: center;
     height: 80vh;
     background-color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
 }
 
 .login-container {

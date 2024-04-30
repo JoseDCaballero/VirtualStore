@@ -18,6 +18,9 @@
         display: grid;
         justify-content: center;
         align-items: center;    
+        font-family: "Poppins", sans-serif;
+        font-weight: 200;
+        font-style: normal;  
     }
     .info{
         height: 100%;
@@ -30,4 +33,5 @@
     p{
         font-size: 4vh;
     }
+    
 </style>

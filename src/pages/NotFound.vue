@@ -1,8 +1,9 @@
 <template>
+    <main>
     <h1>No se encontró la página {{$route.params.pathMatch}}</h1>    
     <router-link to="/">
         <button>Regresar a inicio</button>
-    </router-link>
+    </router-link></main>
 </template>    
 
 <style scoped>
@@ -18,5 +19,10 @@
     button:hover{
         background-color: #0081CF;
         cursor: pointer;
+    }
+    main{
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: italic;
     }
 </style>
