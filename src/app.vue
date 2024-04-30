@@ -11,12 +11,12 @@
   </template>
   
   <script>
-  import {ReceptionPage} from "./pages/index.js";
+  import {HomePage} from "./pages/index.js";
   
   export default {
     computed: {
-      ReceptionPage() {
-        return ReceptionPage
+      HomePage() {
+        return HomePage
       },
       layout() {
         return this.$route.meta.layout || 'div'

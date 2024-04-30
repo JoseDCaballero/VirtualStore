@@ -1,71 +1,71 @@
 <script setup>
-import {useRouter} from 'vue-router'
+import { useRouter } from 'vue-router'
 const router = useRouter()
-    const showing = () => {
-        alert("Sesión iniciada");
-        router.push('/')
-    }
+const showing = () => {
+    alert("Sesión iniciada");
+    router.push('/')
+}
 
-    /*const submitForm = () => {
-      isLoading.value = true
-      console.log(import.meta.env.VITE_API_URL+'/token/login');
-      axios.post(
-          import.meta.env.VITE_API_URL+'/token/login',
-          {
-            form_data: true,
-            username: username.value,
-            password: password.value
-          },
-          {
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
-            }
-          })
-          .then(response => {
-            localStorage.setItem('token', JSON.stringify(response.data.access_token));
-            window.dispatchEvent(new Event('tokenChanged'))
-            getUserInfo();
-            modalTitle.value = '¡Bienvenido!'
-            modalContent.value = `En un momento serás redirigido a tu página de aulas.`
-            showModal.value = true // Mostrar modal
-            setTimeout(() => {
-            router.push('/classrooms')
-            },2500);
-            isLoading.value = false // Terminó de cargar normalmente
-        }).catch(() => {
-        modalTitle.value = 'Credenciales incorrectas'
-        modalContent.value = '¿Olvidaste tu contraseña? ¡Pues no hay problema! <br> ...Solo tienes que recordarla.'
+/*const submitForm = () => {
+  isLoading.value = true
+  console.log(import.meta.env.VITE_API_URL+'/token/login');
+  axios.post(
+      import.meta.env.VITE_API_URL+'/token/login',
+      {
+        form_data: true,
+        username: username.value,
+        password: password.value
+      },
+      {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      })
+      .then(response => {
+        localStorage.setItem('token', JSON.stringify(response.data.access_token));
+        window.dispatchEvent(new Event('tokenChanged'))
+        getUserInfo();
+        modalTitle.value = '¡Bienvenido!'
+        modalContent.value = `En un momento serás redirigido a tu página de aulas.`
         showModal.value = true // Mostrar modal
-        isLoading.value = false // Terminó de cargar con error
-    })
+        setTimeout(() => {
+        router.push('/classrooms')
+        },2500);
+        isLoading.value = false // Terminó de cargar normalmente
+    }).catch(() => {
+    modalTitle.value = 'Credenciales incorrectas'
+    modalContent.value = '¿Olvidaste tu contraseña? ¡Pues no hay problema! <br> ...Solo tienes que recordarla.'
+    showModal.value = true // Mostrar modal
+    isLoading.value = false // Terminó de cargar con error
+})
 }*/
 </script>
 
-<template>    
-<main>    
-    <div class="login-container">
-        <h2>Iniciar Sesión</h2>
-        <form @submit.prevent="showing">
-            <div class="form-group">
-                <label for="username">Nombre de usuario</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">Iniciar Sesión</button>
-        </form><br>        
-        <label>¿No tienes una cuenta?</label>
-        <router-link to="/register">
-            <button>Crear cuenta</button>
-        </router-link>
-    </div>    
-</main>    
+<template>
+    <main>
+        <div class="login-container">
+            <h2>Iniciar Sesión</h2>
+            <form @submit.prevent="showing">
+                <div class="form-group">
+                    <label for="username">Nombre de usuario</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+            </form><br>
+            <label>¿No tienes una cuenta?</label>
+            <router-link to="/register">
+                <button>Crear cuenta</button>
+            </router-link>
+        </div>
+    </main>
 </template>
 
 <style scoped>
-    main {
+main {
     padding: 0;
     font-family: Arial, sans-serif;
     display: flex;
@@ -104,11 +104,13 @@ label {
 
 input[type="text"],
 input[type="password"] {
-    width: calc(100% - 20px); /* Restar el padding */
+    width: calc(100% - 20px);
+    /* Restar el padding */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Incluir el padding en el ancho total */
+    box-sizing: border-box;
+    /* Incluir el padding en el ancho total */
 }
 
 button {
@@ -125,5 +127,4 @@ button {
 button:hover {
     background-color: #01436b;
 }
-
 </style>
