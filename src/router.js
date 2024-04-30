@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DefaultLayout from './layouts/DefaultLayout.vue';
-import { AboutPage, HomePage, ReceptionPage, LoginPage, CategoriesPage, NewAccount } from './pages/index.js'
+import { AboutPage, HomePage, ReceptionPage, LoginPage, CategoriesPage, NewAccount, NotFound } from './pages/index.js'
 
 const routes = [
   {
@@ -51,12 +51,24 @@ const routes = [
       layout: DefaultLayout
     }
   },
+  {
+    path: '/:pathMatch(.*)*',
+    component: NotFound,
+    meta: {
+        title: 'Página no encontrada',
+        layout: DefaultLayout
+    }
+  },
 ];
 
 const router = createRouter({
   /*history: createWebHistory(import.meta.env.BASE_URL)*/
   history: createWebHistory(),
   routes
+})
+
+router.afterEach((to) => {
+  document.title = to.meta.title ?? 'Tienda'
 })
 
 export default router

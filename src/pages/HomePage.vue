@@ -6,9 +6,9 @@
         <router-link to="/categories"><h2>Inicie a comprar aquí</h2></router-link>
     </div>
 
-    <div id="falso">
+    <!--<div id="falso">
         <router-link to="/login"><h2>Para poder hacer compras debe iniciar sesión en su cuenta</h2></router-link>
-    </div>
+    </div>-->
 
     <!--<div id="fondo">
         <img src="/src/images/logo.png">
